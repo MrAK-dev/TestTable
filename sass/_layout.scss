@@ -1,0 +1,83 @@
+.container {
+  max-width: 130rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-4);
+  box-shadow: var(--shadow-dark);
+}
+
+.user-info {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #000;
+}
+
+.body-blackout {
+  position: absolute;
+  z-index: 1010;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+
+  &.is-blacked-out {
+    width: 100%;
+    height: 116%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: block;
+    background-size: cover;
+    // background-repeat: no-repeat;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+
+    & th {
+      display: none;
+    }
+
+    & tr {
+      margin-bottom: 10px;
+      display: block;
+      border-bottom: 2px solid #ddd;
+    }
+
+    & td {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      border-bottom: 1px dotted #ccc;
+    }
+
+    & td:last-child {
+      border-bottom: 0;
+    }
+
+    & td:before {
+      content: attr(data-label);
+      float: left;
+      font-weight: 600;
+    }
+  }
+
+  .popup {
+    font-size: 1rem;
+    &__heading {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    &__is--visible {
+      opacity: 1;
+      height: 60%;
+      width: 60%;
+    }
+  }
+
+  .body-blackout {
+    &.is-blacked-out {
+      width: 120%;
+      height: 245%;
+    }
+  }
+}
